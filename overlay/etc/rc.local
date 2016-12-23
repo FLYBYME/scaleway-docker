@@ -14,6 +14,6 @@
 # Starting docker containers defined in metadata tags
 (sleep 3; /usr/local/sbin/docker-autorun-metadata) &
 
-(sleep 3; cp /aufs/ /var/lib/docker/aufs/)
+(sleep 3; mv /aufs/ /var/lib/docker/aufs/)
 
 exit 0
