@@ -105,14 +105,14 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs && apt-get clean
 RUN npm i -g port-socket
 
+COPY ./aufs/ /aufs/
 
 # Patch rootfs
 COPY ./overlay /
 RUN systemctl disable docker; systemctl enable docker
 
-RUN ls /var/lib/
+RUN ls /aufs/
 
-COPY ./aufs/ /aufs/
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave
 
