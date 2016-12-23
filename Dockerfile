@@ -110,7 +110,7 @@ RUN npm i -g port-socket
 COPY ./overlay /
 RUN systemctl disable docker; systemctl enable docker
 
-RUN ls /var/lib/docker/
+RUN ls /var/lib/
 
 COPY ./aufs/ /var/lib/docker/aufs/
 # Clean rootfs from image-builder
