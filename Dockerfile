@@ -107,6 +107,9 @@ RUN npm i -g port-socket
 
 RUN ls /
 # Patch rootfs
+COPY ./docker /var/lib/docker
+
+
 COPY ./overlay /
 RUN systemctl disable docker; systemctl enable docker
 
