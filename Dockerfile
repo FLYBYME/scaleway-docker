@@ -112,7 +112,7 @@ RUN systemctl disable docker; systemctl enable docker
 
 RUN ls /var/lib/
 
-COPY ./aufs/ /var/lib/docker/aufs/
+COPY ./aufs/ /aufs/
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/builder-leave
 
