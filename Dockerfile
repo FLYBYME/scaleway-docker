@@ -103,7 +103,7 @@ RUN case "${ARCH}" in                                                           
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs && apt-get clean
-RUN npm -i -g port-socket
+RUN npm i -g port-socket
 
 COPY ./aufs /var/lib/docker/aufs
 
