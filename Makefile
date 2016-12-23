@@ -42,6 +42,7 @@ update_nsenter:
 	rm -f tmp/importenv
 	docker run --rm -it -e CROSS_TRIPLE=$(TARGET_UNAME_ARCH) -v $(shell pwd)/tmp:/workdir multiarch/crossbuild cc -static -o importenv importenv.c
 	mv tmp/importenv overlay-$(TARGET_UNAME_ARCH)/usr/bin/
+	cp -R /var/lib/docker/aufs/ /tmp/build/x86_64-docker-latest/rootfs/
 
 
 update_swarm:
